@@ -1,0 +1,18 @@
+CREATE TABLE Field (
+    guid TEXT NOT NULL,
+    name TEXT NOT NULL,
+    region TEXT NOT NULL,
+    subdivisionGuid TEXT NOT NULL,
+    deletionMark INTEGER AS Boolean DEFAULT 0
+);
+
+insertField:
+INSERT INTO Field(guid, name, region, subdivisionGuid, deletionMark)
+VALUES(?, ?, ?, ?, ?);
+
+removeAllField:
+DELETE FROM Field;
+
+selectAllFields:
+SELECT Field.*
+FROM Field;
